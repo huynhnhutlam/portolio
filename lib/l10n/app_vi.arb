@@ -1,0 +1,58 @@
+{
+  "menuAbout": "Về tôi",
+  "menuSkills": "Kỹ năng",
+  "menuExperience": "Kinh nghiệm",
+  "menuProjects": "Dự án",
+  "menuServices": "Dịch vụ",
+  "menuContact": "Liên hệ",
+
+  "heroHello": "Xin chào, tôi là",
+  "heroContactBtn": "Liên hệ",
+  "heroDownloadBtn": "Tải CV",
+
+  "aboutTitle": "Về tôi",
+  "aboutSubtitle": "Tìm hiểu thêm về tôi",
+  "aboutYearsExp": "Năm kinh nghiệm",
+  "aboutProjectsCompleted": "Dự án hoàn thành",
+  "aboutHappyClients": "Khách hàng",
+  "aboutTechnologies": "Công nghệ",
+
+  "skillsTitle": "Kỹ năng",
+  "skillsSubtitle": "Các công nghệ & công cụ tôi sử dụng",
+
+  "experienceTitle": "Kinh nghiệm",
+  "experienceSubtitle": "Hành trình sự nghiệp",
+
+  "projectsTitle": "Dự án nổi bật",
+  "projectsSubtitle": "Những sản phẩm tôi đã xây dựng",
+  "projectsSourceCode": "Mã nguồn",
+  "projectsViewLive": "Xem thực tế",
+
+  "servicesTitle": "Dịch vụ của tôi",
+  "servicesSubtitle": "Tôi có thể làm gì cho bạn",
+  "certificationsTitle": "Chứng chỉ & Giải thưởng",
+  "certificationsSubtitle": "Các thành tựu học thuật & chuyên nghiệp",
+
+  "contactTitle": "Liên hệ",
+  "contactSubtitle": "Hãy hợp tác cùng nhau",
+  "contactDescription": "Bạn có ý tưởng hay một dự án độc đáo? Hộp thư của tôi luôn mở. Cho dù bạn có câu hỏi hay chỉ muốn chào hỏi, tôi sẽ cố gắng phản hồi lại cho bạn sớm nhất!",
+  "contactFieldName": "Tên",
+  "contactFieldHintName": "Họ và tên",
+  "contactFieldEmail": "Email",
+  "contactFieldHintEmail": "Địa chỉ Email",
+  "contactFieldMessage": "Lời nhắn",
+  "contactFieldHintMessage": "Cho tôi biết về dự án của bạn...",
+  "contactSendBtn": "Gửi tin nhắn",
+
+  "footerDesignedBy": "Thiết kế & Xây dựng bởi Lam Huynh",
+  "footerCopyright": "© {year} Đã đăng ký bản quyền.",
+  
+  "toggleTheme": "Đổi nền",
+  "langEn": "EN",
+  "langVi": "VI",
+  "mobileMenu": "Danh mục",
+  "backToTop": "Lên đầu trang",
+  "myRole": "Lập trình viên Flutter / Mobile & Web",
+  "myDescription": "Tôi xây dựng các ứng dụng mạnh mẽ, hiệu năng cao và có tính thẩm mỹ chú trọng vào trải nghiệm người dùng bằng Flutter. Đam mê thiết kế UI/UX và các kiến trúc có khả năng mở rộng.",
+  "aboutDescription": "Tôi là một kỹ sư phần mềm đầy nhiệt huyết với trọng tâm chính là xây dựng các ứng dụng đa nền tảng phản hồi nhanh và hiệu năng cao. Trong nhiều năm qua, tôi đã triển khai thành công nhiều dự án phức tạp từ giai đoạn lên ý tưởng đến khi ra mắt."
+}

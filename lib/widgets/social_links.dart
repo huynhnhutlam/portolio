@@ -9,7 +9,7 @@ class SocialLinks extends StatelessWidget {
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
     if (!await launchUrl(uri)) {
-      debugPrint('Could not launch \$url');
+      debugPrint('Could not launch $url');
     }
   }
 
@@ -31,7 +31,7 @@ class SocialLinks extends StatelessWidget {
         ),
         const SizedBox(width: 8),
         IconButton(
-          onPressed: () => _launchUrl('mailto:\${MockData.contactEmail}'),
+          onPressed: () => _launchUrl('mailto:${MockData.contactEmail}'),
           icon: const FaIcon(FontAwesomeIcons.envelope),
           tooltip: 'Email',
         ),

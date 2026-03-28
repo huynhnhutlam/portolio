@@ -27,7 +27,9 @@ class ProjectsSection extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: isMobile ? 1 : (Responsive.isTablet(context) ? 2 : 3),
+              crossAxisCount: isMobile
+                  ? 1
+                  : (Responsive.isTablet(context) ? 2 : 3),
               crossAxisSpacing: 32,
               mainAxisSpacing: 32,
               childAspectRatio: isMobile ? 0.9 : 0.85,
@@ -60,7 +62,7 @@ class _ProjectCardState extends State<_ProjectCard> {
     if (url.isEmpty) return;
     final uri = Uri.parse(url);
     if (!await launchUrl(uri)) {
-      debugPrint('Could not launch \$url');
+      debugPrint('Could not launch $url');
     }
   }
 
@@ -68,7 +70,7 @@ class _ProjectCardState extends State<_ProjectCard> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     String langCode = Localizations.localeOf(context).languageCode;
-    
+
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
@@ -80,7 +82,9 @@ class _ProjectCardState extends State<_ProjectCard> {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: Theme.of(context).colorScheme.primary.withAlpha(_isHovered ? 50 : 20),
+              color: Theme.of(
+                context,
+              ).colorScheme.primary.withAlpha(_isHovered ? 50 : 20),
               blurRadius: _isHovered ? 20 : 10,
               offset: Offset(0, _isHovered ? 10 : 5),
             ),
@@ -99,7 +103,9 @@ class _ProjectCardState extends State<_ProjectCard> {
                     widget.project.imageUrl,
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) => Container(
-                      color: Theme.of(context).colorScheme.primary.withAlpha(20),
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.primary.withAlpha(20),
                       child: const Center(child: Icon(Icons.error)),
                     ),
                   ),
@@ -112,14 +118,22 @@ class _ProjectCardState extends State<_ProjectCard> {
                           children: [
                             if (widget.project.githubLink.isNotEmpty)
                               IconButton(
-                                icon: const Icon(Icons.code, color: Colors.white),
-                                onPressed: () => _launchUrl(widget.project.githubLink),
+                                icon: const Icon(
+                                  Icons.code,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () =>
+                                    _launchUrl(widget.project.githubLink),
                                 tooltip: l10n.projectsSourceCode,
                               ),
                             if (widget.project.link.isNotEmpty)
                               IconButton(
-                                icon: const Icon(Icons.open_in_new, color: Colors.white),
-                                onPressed: () => _launchUrl(widget.project.link),
+                                icon: const Icon(
+                                  Icons.open_in_new,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () =>
+                                    _launchUrl(widget.project.link),
                                 tooltip: l10n.projectsViewLive,
                               ),
                           ],
@@ -139,8 +153,8 @@ class _ProjectCardState extends State<_ProjectCard> {
                     Text(
                       widget.project.title.get(langCode),
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                        fontWeight: FontWeight.bold,
+                      ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -148,9 +162,9 @@ class _ProjectCardState extends State<_ProjectCard> {
                     Expanded(
                       child: Text(
                         widget.project.description.get(langCode),
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              height: 1.5,
-                            ),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyMedium?.copyWith(height: 1.5),
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -162,7 +176,8 @@ class _ProjectCardState extends State<_ProjectCard> {
                       children: widget.project.technologies.map((tech) {
                         return Text(
                           tech,
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
                                 color: Theme.of(context).colorScheme.secondary,
                                 fontWeight: FontWeight.bold,
                               ),

@@ -10,7 +10,7 @@ class ExperienceSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     String langCode = Localizations.localeOf(context).languageCode;
-    
+
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 80),
       child: Column(
@@ -45,7 +45,9 @@ class ExperienceSection extends StatelessWidget {
                           Container(
                             width: 2,
                             height: 120, // Approximate height line
-                            color: Theme.of(context).colorScheme.primary.withAlpha(50),
+                            color: Theme.of(
+                              context,
+                            ).colorScheme.primary.withAlpha(50),
                           ),
                       ],
                     ),
@@ -56,33 +58,43 @@ class ExperienceSection extends StatelessWidget {
                         children: [
                           Text(
                             exp.role.get(langCode),
-                            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            style: Theme.of(context).textTheme.titleLarge
+                                ?.copyWith(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 8),
                           Row(
                             children: [
                               Text(
                                 exp.company,
-                                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                      color: Theme.of(context).colorScheme.primary,
+                                style: Theme.of(context).textTheme.titleMedium
+                                    ?.copyWith(
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.primary,
                                     ),
                               ),
                               const SizedBox(width: 16),
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 4,
+                                ),
                                 decoration: BoxDecoration(
                                   color: Theme.of(context).colorScheme.surface,
                                   borderRadius: BorderRadius.circular(16),
                                   border: Border.all(
-                                    color: Theme.of(context).colorScheme.secondary.withAlpha(100),
+                                    color: Theme.of(
+                                      context,
+                                    ).colorScheme.secondary.withAlpha(100),
                                   ),
                                 ),
                                 child: Text(
                                   exp.duration.get(langCode),
-                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                        color: Theme.of(context).colorScheme.secondary,
+                                  style: Theme.of(context).textTheme.bodySmall
+                                      ?.copyWith(
+                                        color: Theme.of(
+                                          context,
+                                        ).colorScheme.secondary,
                                         fontWeight: FontWeight.w600,
                                       ),
                                 ),
@@ -95,22 +107,30 @@ class ExperienceSection extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyLarge,
                           ),
                           const SizedBox(height: 16),
-                          ...(exp.achievements.get(langCode)).map((achievement) => Padding(
-                            padding: const EdgeInsets.only(bottom: 8),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Icon(Icons.check_circle, size: 20, color: Colors.green),
-                                const SizedBox(width: 8),
-                                Expanded(
-                                  child: Text(
-                                    achievement,
-                                    style: Theme.of(context).textTheme.bodyMedium,
+                          ...(exp.achievements.get(langCode)).map(
+                            (achievement) => Padding(
+                              padding: const EdgeInsets.only(bottom: 8),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Icon(
+                                    Icons.check_circle,
+                                    size: 20,
+                                    color: Colors.green,
                                   ),
-                                ),
-                              ],
+                                  const SizedBox(width: 8),
+                                  Expanded(
+                                    child: Text(
+                                      achievement,
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.bodyMedium,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          )),
+                          ),
                         ],
                       ),
                     ),

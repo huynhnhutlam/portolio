@@ -62,92 +62,94 @@ class _HomePageState extends State<HomePage> {
       l10n.menuContact,
     ];
 
-    return Scaffold(
-      endDrawer: _buildMobileDrawer(menus),
-      body: Stack(
-        children: [
-          CustomScrollView(
-            controller: _scrollController,
-            slivers: [
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 80),
-                  child: Center(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 1200),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 32),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AnimatedSection(
-                              sectionKey: _sectionKeys[0],
-                              child: HeroSection(
-                                onContactPressed: () => _scrollToSection(6),
+    return SafeArea(
+      child: Scaffold(
+        endDrawer: _buildMobileDrawer(menus),
+        body: Stack(
+          children: [
+            CustomScrollView(
+              controller: _scrollController,
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 80),
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 1200),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 32),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              AnimatedSection(
+                                sectionKey: _sectionKeys[0],
+                                child: HeroSection(
+                                  onContactPressed: () => _scrollToSection(6),
+                                ),
                               ),
-                            ),
-                            AnimatedSection(
-                              sectionKey: _sectionKeys[1],
-                              child: const AboutSection(),
-                            ),
-                            AnimatedSection(
-                              sectionKey: _sectionKeys[2],
-                              child: const SkillsSection(),
-                            ),
-                            AnimatedSection(
-                              sectionKey: _sectionKeys[3],
-                              child: const ExperienceSection(),
-                            ),
-                            AnimatedSection(
-                              sectionKey: _sectionKeys[4],
-                              child: const ProjectsSection(),
-                            ),
-                            AnimatedSection(
-                              sectionKey: _sectionKeys[5],
-                              child: const ServicesSection(),
-                            ),
-                            AnimatedSection(
-                              sectionKey: _sectionKeys[6],
-                              child: const CertificationsSection(),
-                            ),
-                            AnimatedSection(
-                              sectionKey: _sectionKeys[7],
-                              child: const ContactSection(),
-                            ),
-                            const FooterSection(),
-                          ],
+                              AnimatedSection(
+                                sectionKey: _sectionKeys[1],
+                                child: const AboutSection(),
+                              ),
+                              AnimatedSection(
+                                sectionKey: _sectionKeys[2],
+                                child: const SkillsSection(),
+                              ),
+                              AnimatedSection(
+                                sectionKey: _sectionKeys[3],
+                                child: const ExperienceSection(),
+                              ),
+                              AnimatedSection(
+                                sectionKey: _sectionKeys[4],
+                                child: const ProjectsSection(),
+                              ),
+                              AnimatedSection(
+                                sectionKey: _sectionKeys[5],
+                                child: const ServicesSection(),
+                              ),
+                              AnimatedSection(
+                                sectionKey: _sectionKeys[6],
+                                child: const CertificationsSection(),
+                              ),
+                              AnimatedSection(
+                                sectionKey: _sectionKeys[7],
+                                child: const ContactSection(),
+                              ),
+                              const FooterSection(),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: Navbar(
-              menus: menus,
-              onMenuTapped: _scrollToSection,
-              onThemeToggle: widget.onThemeToggle,
-              onLangToggle: widget.onLangToggle,
-              isDark: widget.isDark,
+              ],
             ),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _scrollController.animateTo(
-            0,
-            duration: const Duration(milliseconds: 800),
-            curve: Curves.easeInOut,
-          );
-        },
-        tooltip: l10n.backToTop,
-        child: const Icon(Icons.arrow_upward),
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: Navbar(
+                menus: menus,
+                onMenuTapped: _scrollToSection,
+                onThemeToggle: widget.onThemeToggle,
+                onLangToggle: widget.onLangToggle,
+                isDark: widget.isDark,
+              ),
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            _scrollController.animateTo(
+              0,
+              duration: const Duration(milliseconds: 800),
+              curve: Curves.easeInOut,
+            );
+          },
+          tooltip: l10n.backToTop,
+          child: const Icon(Icons.arrow_upward),
+        ),
       ),
     );
   }
@@ -163,7 +165,10 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(24.0),
               child: Text(
                 l10n.mobileMenu,
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             ...List.generate(menus.length, (index) {

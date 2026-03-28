@@ -8,7 +8,13 @@ class LocalizedData<T> {
       return values[langCode] as T;
     }
     // Fallback to English, or first available
-    return values.containsKey('en') ? values['en'] as T : values.values.first;
+    if (values.containsKey('en')) {
+      return values['en'] as T;
+    }
+    if (values.isEmpty) {
+      throw StateError('LocalizedData has no values.');
+    }
+    return values.values.first;
   }
 }
 
@@ -16,10 +22,7 @@ class Skill {
   final String name;
   final LocalizedData<String> category;
 
-  Skill({
-    required this.name,
-    required this.category,
-  });
+  Skill({required this.name, required this.category});
 }
 
 class Project {
@@ -72,10 +75,7 @@ class Stat {
   final String value;
   final LocalizedData<String> label;
 
-  Stat({
-    required this.value,
-    required this.label,
-  });
+  Stat({required this.value, required this.label});
 }
 
 class Certificate {
@@ -91,4 +91,3 @@ class Certificate {
     required this.link,
   });
 }
-

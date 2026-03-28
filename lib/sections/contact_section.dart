@@ -22,10 +22,8 @@ class ContactSection extends StatelessWidget {
             title: l10n.contactTitle,
             subtitle: l10n.contactSubtitle,
           ),
-          if (isMobile)
-            const SizedBox(height: 48),
-          if (isMobile)
-            _buildContactForm(context, l10n),
+          if (isMobile) const SizedBox(height: 48),
+          if (isMobile) _buildContactForm(context, l10n),
           if (!isMobile)
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +35,9 @@ class ContactSection extends StatelessWidget {
                     children: [
                       Text(
                         l10n.contactDescription,
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.6),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyLarge?.copyWith(height: 1.6),
                       ),
                       const SizedBox(height: 32),
                       Row(
@@ -59,10 +59,7 @@ class ContactSection extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 80),
-                Expanded(
-                  flex: 3,
-                  child: _buildContactForm(context, l10n),
-                ),
+                Expanded(flex: 3, child: _buildContactForm(context, l10n)),
               ],
             ),
         ],
@@ -106,7 +103,9 @@ class ContactSection extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                //TODO: function
+              },
               child: Text(l10n.contactSendBtn),
             ),
           ),
@@ -134,7 +133,9 @@ class _ContactField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(
+            context,
+          ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
         TextField(
@@ -143,10 +144,7 @@ class _ContactField extends StatelessWidget {
             hintText: hint,
             filled: true,
             fillColor: Theme.of(context).colorScheme.surface,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide.none,
-            ),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide(

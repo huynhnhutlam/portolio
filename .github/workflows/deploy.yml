@@ -2,28 +2,35 @@ name: Deploy Flutter Web to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]      # hoặc master nếu bạn dùng branch master
+
+permissions:
+  contents: write           # ← Thêm dòng này là quan trọng nhất
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+          cache: true
 
       - name: Install dependencies
         run: flutter pub get
 
       - name: Build Flutter Web
-        run: flutter build web --release --base-href "/portolio/"   # thay TEN-REPO bằng tên repo của bạn
+        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"   # tự động lấy tên repo
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
-          force_orphan: true   # xóa lịch sử cũ, chỉ giữ bản mới nhất
+          force_orphan: true        # Xóa lịch sử cũ, giữ repo sạch
+          allow_empty_commit: false

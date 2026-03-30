@@ -1,0 +1,65 @@
+{
+  "menuAbout": "About",
+  "menuSkills": "Skills",
+  "menuExperience": "Experience",
+  "menuProjects": "Projects",
+  "menuServices": "Services",
+  "menuContact": "Contact",
+
+  "heroHello": "Hello, I am",
+  "heroContactBtn": "Contact Me",
+  "heroDownloadBtn": "Download CV",
+
+  "aboutTitle": "About Me",
+  "aboutSubtitle": "Get to know more about me",
+  "aboutYearsExp": "Years Experience",
+  "aboutProjectsCompleted": "Projects Completed",
+  "aboutHappyClients": "Happy Clients",
+  "aboutTechnologies": "Technologies",
+
+  "skillsTitle": "My Skills",
+  "skillsSubtitle": "Technologies & Tools I work with",
+
+  "experienceTitle": "Experience",
+  "experienceSubtitle": "My professional journey",
+
+  "projectsTitle": "Featured Projects",
+  "projectsSubtitle": "Some things I have built",
+  "projectsSourceCode": "Source Code",
+  "projectsViewLive": "View Live",
+
+  "servicesTitle": "My Services",
+  "servicesSubtitle": "What can I do for you",
+  "certificationsTitle": "Certifications",
+  "certificationsSubtitle": "My academic & professional achievements",
+
+  "contactTitle": "Get In Touch",
+  "contactSubtitle": "Let's work together",
+  "contactDescription": "Have an idea or a unique project? My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+  "contactFieldName": "Name",
+  "contactFieldHintName": "Your Full Name",
+  "contactFieldEmail": "Email",
+  "contactFieldHintEmail": "Your Email Address",
+  "contactFieldMessage": "Message",
+  "contactFieldHintMessage": "Tell me about your project...",
+  "contactSendBtn": "Send Message",
+
+  "footerDesignedBy": "Designed & Built by Lam Huynh",
+  "footerCopyright": "© {year} All rights reserved.",
+  "@footerCopyright": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+
+  "toggleTheme": "Toggle Theme",
+  "langEn": "EN",
+  "langVi": "VI",
+  "mobileMenu": "Menu",
+  "backToTop": "Back to top",
+  "myRole": "Flutter / Mobile & Web Developer",
+  "myDescription": "I build robust, performant, and beautiful applications focusing on great user experiences using Flutter. Passionate about UI/UX design and scalable architectures.",
+  "aboutDescription": "I am a passionate software engineer with a strong focus on building responsive and high-performance cross-platform applications. Over the years, I have successfully delivered many complex projects from ideation to production."
+}
